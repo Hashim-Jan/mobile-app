@@ -1,13 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:mobile_app/core/models/mobile_model.dart';
+import 'package:mobile_app/core/services/database.dart';
 
-class HomeViewModel extends ChangeNotifier{
+class HomeViewModel extends ChangeNotifier {
+  final _database = DatabaseServices();
+  List<MobileModel> mobileList = [];
 
-  final List<MobileModel> mobileList = [
-    MobileModel(customerName: "Ali",mobileModel: 'OPPO'),
-    MobileModel(customerName: "Ali",mobileModel: 'OPPO'),
-    MobileModel(customerName: "Ali",mobileModel: 'OPPO'),
-    MobileModel(customerName: "Ali",mobileModel: 'OPPO'),
-    MobileModel(customerName: "Ali",mobileModel: 'OPPO'),
-  ];
+  HomeViewModel() {
+    showMobile();
+  }
+
+  showMobile() async {
+    mobileList = await _database.getMobile();
+  }
 }

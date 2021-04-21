@@ -1,18 +1,18 @@
-class MobileModel{
+class MobileModel {
   String customerName;
   String mobileModel;
 
-  MobileModel({this.customerName,this.mobileModel});
+  MobileModel({this.customerName, this.mobileModel});
 
-  MobileModel.fromJson({json}){
+  MobileModel.fromJson(json) {
     this.customerName = json['customerName'];
     this.mobileModel = json['mobileModel'];
   }
 
-  toJson(){
+  toJson() {
     return {
-      'customerName' : this.customerName,
-      'mobileModel' : this.mobileModel,
+      'customerName': this.customerName,
+      'mobileModel': this.mobileModel,
     };
   }
 }

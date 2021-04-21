@@ -10,7 +10,7 @@ class AddMobileScreen extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => AddMobileViewModel(),
       child: Consumer<AddMobileViewModel>(
-        builder: (context, model, child){
+        builder: (context, model, child) {
           return Scaffold(
             appBar: AppBar(
               title: Text("Add mobile"),
@@ -23,7 +23,9 @@ class AddMobileScreen extends StatelessWidget {
                 CustomTextField(),
               ],
             ),
-            bottomNavigationBar: CustomBottomNavigationBar(currentIndex: 1,),
+            bottomNavigationBar: CustomBottomNavigationBar(
+              currentIndex: 1,
+            ),
           );
         },
       ),
